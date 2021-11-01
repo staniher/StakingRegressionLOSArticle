@@ -14,8 +14,8 @@ def predict():
     #We load our saved model in the Flask project to use it
     model=joblib.load('stackedReg.ml')
     #We get all the values entered in the html form as a list
-    #string_features=[i for i in request.form.values()]
-    string_features=["0","12","54","0",'11/30/2021']
+    string_features=[i for i in request.form.values()]
+    #string_features=["0","12","54","0",'11/30/2021']
     #We get the last value of the list (i.e. date of entry in the hospital)
     date_hospitalisation =string_features[-1]  
     #string_features[0].
