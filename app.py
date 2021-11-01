@@ -1,6 +1,11 @@
 from flask import Flask,request,render_template
 import numpy as np
+import logging
+
+
 app=Flask(__name__)
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
 
 @app.route('/')
 #The below function returns the index.html page of our project
