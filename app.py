@@ -38,7 +38,7 @@ def predict():
     #We get the year of discharge from the hospital (for example 2021)
     discharge_year = date_discharge_hopital.year
     #We get the day of discharge from the hospital (For example 11, 25, 30)
-    discharge_date_day = date_sortie_hopital.day
+    discharge_date_day = date_discharge_hopital.day
     #We prepare the return string containing the prediction of the release date
     string_prediction=" is likely to be discharged from the hospital on "+str(week_day_discharge) + ", " +str(discharge_date_day) + " "+ str(discharge_month) + " "+ str(discharge_year) 
     #We return the index.html page with the formatted result
