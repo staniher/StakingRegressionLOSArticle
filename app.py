@@ -14,10 +14,11 @@ def predict():
     #We load our saved model in the Flask project to use it
     model=joblib.load('stackedReg.ml')
     #We get all the values entered in the html form as a list
-    #string_features=[i for i in request.form.values()]
-    string_features=["0","12","54","0",'11/30/2021']
+    string_features=[i for i in request.form.values()]
+    #string_features=["0","12","54","0",'11/30/2021']
     #We get the last value of the list (i.e. date of entry in the hospital)
     date_hospitalisation =string_features[-1]  
+    #string_features[0].
     #We get all the values of the list (Gender, Age, Disease, Service) except the last one 
     features_model = [string_features[0],string_features[1],string_features[2],string_features[3]]
     #We convert all our features to float
@@ -39,7 +40,7 @@ def predict():
     #We get the year of discharge from the hospital (for example 2021)
     discharge_year = date_discharge_hopital.year
     #We get the day of discharge from the hospital (For example 11, 25, 30)
-    discharge_date_day = date_discharge_hopital.day
+    discharge_date_day =  date_discharge_hopital.day
     #We prepare the return string containing the prediction of the release date
     string_prediction=" is likely to be discharged from the hospital on "+str(week_day_discharge) + ", " +str(discharge_date_day) + " "+ str(discharge_month) + " "+ str(discharge_year) 
     #We return the index.html page with the formatted result
