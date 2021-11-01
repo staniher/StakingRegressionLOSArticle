@@ -13,3 +13,6 @@ scikit-learn
 sklearn
 gunicorn
 datetime
+mlxtend
+lightgbm
+xgboost
